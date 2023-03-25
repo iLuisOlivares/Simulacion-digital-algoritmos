@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulacion</title>
+</head>
+
+<body>
+  <canvas id="MiGrafica" width="400" height="300"></canvas>
+</body>
+
+<script src="erlang.js"></script>
+<script>
+  const miCanvas = document.getElementById("MiGrafica")
+
+  const chart = new Chart(miCanvas, {
+    type: "bar",
+    data: {
+      labels: Object.keys(histo),
+      datasets: [{
+        label: "Histograma",
+        data: Object.values(histo),
+        backgroundColor: "steelblue"
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+</script>
+
+</html>
