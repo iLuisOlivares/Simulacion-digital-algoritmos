@@ -1,14 +1,13 @@
 
 
-// Puede guardar en una estructura de datos N numeros reales en doble precision
 
 const n = 1000;
 
 const arr = new Array(n);
 
 for (let i = 0; i < n; i++) {
-  arr[i] =  Math.random();
-//   console.log(arr[i]);
+  arr[i] = Math.random();
+  //   console.log(arr[i]);
 }
 
 
@@ -19,7 +18,6 @@ const max = Math.max(...arr);
 console.log("max: ", max);
 
 
-// Ordenar los elementos del array de menor a mayor
 arr.sort((a, b) => a - b);
 
 // Calcular la función de distribución acumulada (CDF) empírica
@@ -48,35 +46,33 @@ for (let i = 0; i < n; i++) {
 // Calcular el valor crítico del estadístico D para el nivel de significancia alpha
 const alpha = 0.05;
 const D_critico = Math.sqrt(-0.5 * Math.log(alpha / 2)) / Math.sqrt(n);
-console.log("confianza porcentual:",(1- D )* 100)
-// Imprimir el resultado del test
+console.log("confianza porcentual:", (1 - D) * 100)
 if (D <= D_critico) {
   console.log("Los datos siguen una distribución uniforme.");
 } else {
   console.log("Los datos no siguen una distribución uniforme.");
 }
 
- const histo = {
-        "0.0": 0,
-        "0.1": 0,
-        "0.2": 0,
-        "0.3": 0,
-        "0.4": 0,
-        "0.5": 0,
-        "0.6": 0,
-        "0.7": 0,
-        "0.8": 0,
-        "0.9": 0
-    }
+const histo = {
+  "0.0": 0,
+  "0.1": 0,
+  "0.2": 0,
+  "0.3": 0,
+  "0.4": 0,
+  "0.5": 0,
+  "0.6": 0,
+  "0.7": 0,
+  "0.8": 0,
+  "0.9": 0
+}
 
-    for(let i= 0; i < arr.length; i++){
-        histo[arr[i].toString().substring(0,3)]+= 1;    
-        
-    }
+for (let i = 0; i < arr.length; i++) {
+  histo[arr[i].toString().substring(0, 3)] += 1;
 
-    for (const item in histo) {
-            console.log(item+":",  histo[item]);            
-    }
+}
 
-    
-    
+for (const item in histo) {
+  console.log(item + ":", histo[item]);
+}
+
+

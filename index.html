@@ -5,39 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulacion</title>
 </head>
 
 <body>
-  <canvas id="MiGrafica" width="400" height="300"></canvas>
+  <div id="dist" style="width:400;height:300;"></div>
+  <div id='teoric' style="width:400;height:300;"><!-- Plotly chart will be drawn inside this DIV --></div>
 </body>
 
 <script src="erlang.js"></script>
-<script>
-  const miCanvas = document.getElementById("MiGrafica")
+<script src="teoric.js"></script>
 
-  const chart = new Chart(miCanvas, {
-    type: "bar",
-    data: {
-      labels: Object.keys(histo),
-      datasets: [{
-        label: "Histograma",
-        data: Object.values(histo),
-        backgroundColor: "steelblue"
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
-    }
-  });
 
-</script>
 
 </html>

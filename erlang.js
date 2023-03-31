@@ -2,7 +2,6 @@
 const k = 3; // forma de la distribución
 const lambda = 2; // tasa de la distribución
 
-// Generar 1000 números aleatorios utilizando el método de convolución
 const n = 1000;
 const randomNumbers = new Array(n);
 for (let i = 0; i < n; i++) {
@@ -12,9 +11,6 @@ for (let i = 0; i < n; i++) {
     }
     randomNumbers[i] = sum;
 }
-
-// Imprimir los números aleatorios generados
-console.log(randomNumbers);
 
 
 const min = Math.min(...randomNumbers);
@@ -30,14 +26,19 @@ for (let i = 0; i < 10; i++) {
 
     }
 }
+console.log(histo)
 
 for (let i = 0; i < randomNumbers.length; i++) {
     histo[randomNumbers[i].toString().substring(0, 3)] += 1;
 
 }
 
-for (const item in histo) {
-    console.log(item + ":", histo[item]);
-}
 
+const DIST = document.getElementById('dist')
+Plotly.newPlot(DIST, [{
+    x: Object.keys(histo),
+    y: Object.values(histo),
+    type: 'bar',
+    name: 'Erlang Distribution'
+}]);
 
