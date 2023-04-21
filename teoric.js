@@ -23,31 +23,3 @@ Plotly.newPlot(TEORIC, [{
 
 
 
-const data2 = [
-    {
-        x: numerosAleatorios,
-        type: 'histogram',
-        name: 'Distribución Erlang - convulacion'
-    },
-    {
-        x: Array.from({ length: 101 }, (_, i) => i / 100),
-        y: probabilities,
-        type: 'scatter',
-        mode: 'lines',
-        line: {
-            color: 'red',
-            width: 2
-        },
-        name: 'Distribución teórica'
-    }
-];
-
-const layout2 = {
-    title: 'Histograma de números aleatorios Erlang',
-    xaxis: { title: 'Valor' },
-    yaxis: { title: 'Frecuencia' }
-};
-
-const TEORIC2 = document.getElementById('teoric2')
-Plotly.newPlot(TEORIC2, data2, layout2);
-
