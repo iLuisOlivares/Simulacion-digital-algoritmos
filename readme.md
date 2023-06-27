@@ -1,4 +1,4 @@
-#Pasos:
+# Pasos:
 
 - Instalar las dependencias de node: <code>npm install</code>
 - correr el index.html( recomendación: Utilizar la extensión de visual studio code "live server")
